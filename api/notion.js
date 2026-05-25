@@ -13,11 +13,11 @@ export default async function handler(req, res) {
       const body = { page_size: 100 };
       if (cursor) body.start_cursor = cursor;
       const r = await fetch(
-        `https://api.notion.com/v1/databases/358742e5d51681e7af7ff055a2ef5381/query`,
+        'https://api.notion.com/v1/databases/358742e5d51681e7af7ff055a2ef5381/query',
         {
           method: 'POST',
           headers: {
-            'Authorization': `Bearer ${token}`,
+            'Authorization': 'Bearer ' + token,
             'Notion-Version': '2022-06-28',
             'Content-Type': 'application/json'
           },
